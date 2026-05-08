@@ -1,0 +1,391 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: #EDF6FF;
+}
+
+/* ========== NAVIGATION ========== */
+.Navdiv {
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: default;
+    color: #ffffff;
+    font-family: 'Google-sans', sans-serif;
+    position: fixed;
+    padding: 24px;
+    background-image: linear-gradient(to bottom, #EDF6FF, transparent);
+    z-index: 999;
+}
+
+/* Hamburger-Button – standardmäßig versteckt */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #4B6275;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.nav-toggle:hover {
+    background-color: #a5bdd2;
+    color: #ffffff;
+}
+
+.Navdiv ul {
+    justify-content: center;
+    display: flex;
+    gap: 8px;
+    margin: 10px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.Navdiv li a {
+    padding: 12px;
+    border: none;
+    border-radius: 14px;
+    background-color: transparent;
+    color: #000000;
+    font-family: 'Google-sans', sans-serif;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.Navdiv li:hover a {
+    color: #ecf6ff;
+    background-color: #a5bdd2;
+    box-shadow: 0 0 0 2px #576776;
+    text-decoration: underline;
+}
+
+.untereffekt {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    cursor: default;
+    color: #ffffff;
+    font-family: 'Google-sans', sans-serif;
+    position: fixed;
+    padding: 64px;
+    background-image: linear-gradient(to top, #EDF6FF, transparent);
+    z-index: 999;
+}
+
+.Banner {
+    color: #4b627548;
+    text-decoration: underline;
+} 
+
+.Hauptdiv {
+    font-family: 'Google-sans', sans-serif;
+    cursor: default;
+    margin-left: 6rem;
+    line-height: 0.2;
+    font-size: 1.2rem;
+}
+
+.Hauptdiv h2, .Hauptdiv p {
+    margin-left: 6rem;
+    line-height: 0.2;
+    font-size: 1.2rem;
+}
+
+.Haupt-Title, .Downlaod-div, .Changelog, .Über {
+    position: relative;
+    padding: 280px 18px;
+    color: #4B6275;
+    background-color: #EDF6FF;
+}
+
+.Haupt-Title h2, .Downlaod-div h2, .Changelog h2, .Über h2 {
+    font-size: 3rem;
+    transition: all 0.3s ease;
+}
+
+.Haupt-Title h2:hover, .Downlaod-div h2:hover, .Changelog h2:hover, .Über h2:hover {
+    color: #6899c4;
+    transition: all 0.2s ease;
+}
+
+.Übertext, .Überbild, .Changelog-text {
+    margin-bottom: 18px;
+    width: 60%;
+    padding: 18px;
+    border-radius: 14px;
+    background-color: #a5bdd2;
+    margin-left: 6rem;
+}
+
+.Übertext p, .Überbild p {
+    margin-left: 0;
+    line-height: 1;
+    font-size: 1.2rem;
+}
+
+.Button-action {
+    display: flex;
+    gap: 12px;
+    margin-left: 6rem;
+}
+
+.Button-action button {
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 0 0 2px #4B6275;
+    background-color: transparent;
+    font-family: 'Jetbrains-mono', monospace;
+    font-weight: 500;
+    transition: all 0.24s ease;
+    cursor: pointer;
+}
+
+.Button-action button:hover {
+    color: #d9edff;
+    background-color: #6899c4;
+    box-shadow: 0 0 0 2px #d9edff;
+    text-decoration: underline;
+}
+
+.Desktop, .Mobile {
+    width: 60%;
+    padding: 18px;
+    border: solid 2px #000000;
+    border-radius: 14px;
+    margin-top: 8px;
+    margin-left: 6rem;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.Desktop p, .Mobile p {
+    margin-left: 0;
+    line-height: 0.2;
+    font-size: 1.2rem;
+}
+
+.Dropdown {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    margin: 8px 0;
+}
+
+.Dropdown-button {
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    background-color: transparent;
+    font-family: 'Jetbrains-mono', monospace;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.24s ease;
+    box-shadow: 0 0 0 2px #000000;
+}
+
+.Dropdown-button:hover {
+    color: #d9edff;
+    background-color: #6899c4;
+    box-shadow: 0 0 0 2px #d9edff;
+}
+
+.Dropdown-menu {
+    display: none;
+    position: absolute;
+    padding: 12px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    font-family: 'Google-sans', sans-serif;
+    width: 50%;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-top: 4px;
+}
+
+.Dropdown-menu.show {
+    display: block;
+}
+
+.Dropdown-menu a {
+    display: block;
+    color: #000000;
+    border-radius: 8px;
+    text-decoration: none;
+    padding: 18px 12px;
+    transition: all 0s ease;
+}
+
+.Dropdown-menu a:hover {
+    color: #d9edff;
+    background-color: #6899c4;
+    box-shadow: 0 0 0 2px #d9edff;
+    text-decoration: underline;
+}
+
+.Desktop:hover, .Mobile:hover {
+    transform: scale(1.02);
+    color: #d9edff;
+    background-color: #6899c4;
+    border: solid 2px #44627d;
+}
+
+.Desktop button, .Mobile button {
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    background-color: transparent;
+    font-family: 'Jetbrains-mono', monospace;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.24s ease;
+}
+
+.Desktop button:hover, .Mobile button:hover {
+    transform: scale(1.02);
+    color: #d9edff;
+    background-color: #496b88;
+    box-shadow: 0 0 0 2px #d9edff;
+    text-decoration: underline;
+}
+
+.footer footer img {
+    max-width: 240px;
+    width: 100%;
+    height: auto;
+}
+
+
+
+@media (max-width: 768px) {
+    
+    /* Hamburger sichtbar */
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        left: 16px;
+        top: 16px;
+    }
+    
+    /* Navigation als Dropdown */
+    .Navdiv {
+        padding: 52px;
+    }
+    
+    .Navdiv ul {
+        width: 40%;
+        display: none;           /* Standard: versteckt */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 16px;
+        right: 16px;
+        backdrop-filter: blur(14px);
+        background-color: #ffffff89;
+        border-top-right-radius: 14px;
+        border-bottom-left-radius: 14px;
+        border-bottom-right-radius: 14px;
+        box-shadow: 0 0 8px #a5bdd2;
+        padding: 12px;
+        margin: 0;
+        gap: 4px;
+        z-index: 998;
+    }
+    
+    /* Wenn .show Klasse per JS gesetzt wird */
+    .Navdiv ul.show {
+        display: flex;
+    }
+    
+    .Navdiv li {
+        width: 100%;
+    }
+    
+    .Navdiv li a {
+        display: block;
+        width: 80%;
+        padding: 14px;
+        color: #4B6275;
+        border-radius: 10px;
+        text-align: left;
+    }
+    
+    .Navdiv li:hover a {
+        color: #d9edff;
+        background-color: #6899c4;
+        box-shadow: none;
+    }
+    
+    .untereffekt {
+        padding: 32px 12px;
+    }
+    
+    .Hauptdiv {
+        margin-left: 0;
+        padding: 0 16px;
+        font-size: 1rem;
+    }
+    
+    .Hauptdiv h2, .Hauptdiv p {
+        margin-left: 0;
+        line-height: 1.3;
+        font-size: 1rem;
+    }
+    
+    .Haupt-Title, .Downlaod-div, .Changelog, .Über {
+        padding: 120px 16px;
+    }
+    
+    .Haupt-Title h2, .Downlaod-div h2, .Changelog h2, .Über h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .Übertext, .Überbild, .Changelog-text {
+        width: 100%;
+        margin-left: 0;
+        padding: 14px;
+    }
+    
+    .Button-action {
+        margin-left: 0;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .Button-action button {
+        width: 100%;
+        padding: 14px;
+    }
+    
+    .Desktop, .Mobile {
+        width: 100%;
+        margin-left: 0;
+        padding: 16px;
+    }
+    
+    .Desktop p, .Mobile p {
+        line-height: 1.3;
+        font-size: 1rem;
+    }
+    
+    .Dropdown-menu {
+        width: 50%;
+        position: relative;
+        margin-top: 8px;
+    }
+    
+    .footer footer img {
+        max-width: 160px;
+    }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phero-ki</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Res/Font/Font.css">
+    <link rel="icon" href="Res/Bild/Logo/Puerto-schwarz.png">
+</head>
+<body>
+    <audio id="audio" autoplay loop>
+        <source src="Res/Musik/fassounds-good-night-lofi-cozy-chill-music-160166.mp3">
+    </audio>
+    
+    <div class="Navdiv">
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Menü">☰</button>
+        <nav>
+            <ul id="nav-menu">
+                <li><a onclick="document.getElementById('Haupt').scrollIntoView({behavior: 'smooth'})">Startseite</a></li>
+                <li><a onclick="document.getElementById('Über-projekt').scrollIntoView({behavior: 'smooth'})">Über</a></li>
+                <li><a onclick="document.getElementById('Downlaod-div').scrollIntoView({behavior: 'smooth'})">Herunterladen</a></li>
+                <li><a onclick="document.getElementById('Changelog').scrollIntoView({behavior: 'smooth'})">Changelog</a></li>
+                <li><a style="cursor: default;">Version: 1.0</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="untereffekt">
+        <div class="Banner"> Dazeit ist nur website preview für jetzt mehere dinge sind wip!
+            <br> Erstellt vom: Mayi.-oi 2026 <br> Musik hinterground vom: <u style="cursor: pointer;" onclick="window.location.href='https://pixabay.com/users/fassounds-3433550/'">FASSounds</u>
+        </div>
+    </div>
+    <br>
+    
+    <div class="Hauptdiv" id="Haupt">
+        <div class="Haupt-Title">
+            <img style="width: 180px; margin-left: 5.4rem;" src="Res/Bild/Logo/Puerto-schwarz.png">
+            <h2>Phero-ki v0.1</h2>
+            <p>Ein lokale KI, open source, privat und nutzerfreundlich</p>
+            <div class="Button-action">
+                <button onclick="document.getElementById('Downlaod-div').scrollIntoView({behavior: 'smooth'})">Herunterladen</button>
+                <button onclick="document.getElementById('Changelog').scrollIntoView({behavior: 'smooth'})">Changelog</button>
+            </div>
+        </div>
+        
+        <div class="Über" id="Über-projekt">
+            <h2 ><u>Was ist dass den Projekt?</u></h2>
+            <p>Für neue nutzter und möchte nur kurze geschitte erklärt lol</p>
+            <div class="Übertext">
+                <p>Phero ki ist ein open source lokal ki dircet zur deine Gerät!
+                    <br> sind lightweight, Einfach zur nutzen (Hoffe du kannst verstehen lol) und Privat niemand kann lessen und keine Sorge für den deine "Roleplay" veröfftenlich! :D </p>
+            </div>
+            <div class="Überbild">
+                Placeholder bilder lol
+            </div>
+        </div>
+
+        <div class="Downlaod-div"id="Downlaod-div" >
+            <h2 ><u>Hier geht's wirklich zum Spaß!</u></h2>
+            <p>Wähle die richtige Plattform zum Herunterladen</p>
+            <br>
+            <div class="Downlaod-button" >
+                <div class="Desktop">
+                    <h3>Desktop Version</h3>
+                    <p>mewo! :D</p>
+                    <div class="Dropdown">
+                        <button class="Dropdown-button" onclick="toggleDropdown(this)">Plattform ▼</button>
+                        <div class="Dropdown-menu">
+                            <a href="#">Windows</a>
+                            <a href="#">Mac</a>
+                            <a href="#">Linux</a>
+                        </div>
+                    </div>
+                    <button>Jetzt herunterladen!</button>
+                </div>
+                <br>
+                <div class="Mobile">
+                    <h3>Mobile Version</h3>
+                    <p>mewo! :D</p>
+                    <div class="Dropdown">
+                        <button class="Dropdown-button" onclick="toggleDropdown(this)">Plattform ▼</button>
+                        <div class="Dropdown-menu">
+                            <a href="#">Android</a>
+                            <a href="#">iOS</a>
+                        </div>
+                    </div>
+                    <button>Jetzt herunterladen!</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="Changelog" id="Changelog">
+            <h2 ><u>Ganz coole Changelog 9000!</u></h2>
+            <p>Hoffe du kannst lessen den längern text! ;)</p>
+            <div class="Changelog-text">Gär nichts für jetzt... :D</div>
+        </div>
+        <!--
+        <div class="footer">
+            <footer>
+                <p>Erstellt vom: Mayi.-oi 2026</p>
+                <p>Musik hinterground vom: <u style="cursor: pointer;" onclick="window.location.href='https://pixabay.com/users/fassounds-3433550/'">FASSounds</u></p>
+            </footer>
+        </div> -->
+    </div>
+
+<script>
+    // Lautstärke
+    var audio = document.getElementById("audio");
+    audio.volume = 0.5;
+
+    // Dropdown per Klick öffnen/schließen
+    function toggleDropdown(button) {
+        const dropdown = button.parentElement;
+        const menu = dropdown.querySelector('.Dropdown-menu');
+        
+        // Alle anderen Dropdowns schließen
+        document.querySelectorAll('.Dropdown-menu').forEach(m => {
+            if (m !== menu) m.classList.remove('show');
+        });
+        
+        // Aktuelles Dropdown togglen
+        menu.classList.toggle('show');
+    }
+
+    // Schließen wenn woanders hingeklickt wird
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.Dropdown')) {
+            document.querySelectorAll('.Dropdown-menu').forEach(m => {
+                m.classList.remove('show');
+            });
+        }
+    });
+
+    // Nav dinge lol
+    function toggleNav() {
+        document.getElementById('nav-menu').classList.toggle('show');
+    }
+
+    // Schließt das Menü wenn woanders hingeklickt wird
+    document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.Navdiv');
+        if (!nav.contains(e.target)) {
+            document.getElementById('nav-menu').classList.remove('show');
+        }
+    });
+</script>
+</body>
+</html>
